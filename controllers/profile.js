@@ -17,14 +17,18 @@ module.exports = (db) => {
                 console.log(error);
                 console.log("error");
                 response.status(400);
-                response.send("Something went wrong!")
+                response.send("Something went wrong!");
+            }else{
+                response.render('profileHome')
             }
 
         }
-
-
+        db.profile.addProfile(name,age,callback);
     }
 
+    let profileHomeControllerCallback = (request,response) => {
+        response.render('profileHome');
+    }
 
 
 
@@ -34,6 +38,8 @@ module.exports = (db) => {
   return {
 
     newprofile: newprofileControllerCallback,
+    createProfile: createprofileControllerCallback,
+    profileHome: profileHomeControllerCallback
   };
 
 }
