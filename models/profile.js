@@ -19,7 +19,7 @@ module.exports = (dbPoolInstance) => {
             if(queryResult.rows.length > 0){
             callback(null, queryResult.rows)
             }else{
-            callback(null, null);
+            //callback(null, null);
             }
           }
          })
@@ -30,7 +30,7 @@ module.exports = (dbPoolInstance) => {
         let queryText = "SELECT * FROM profiles";
 
         dbPoolInstance.query(queryText, (error, queryResult) => {
-            console.log("this", queryResult.rows)
+            //console.log("this", queryResult.rows)
             if (error){
             console.log("ERRORR");
             //console.log(error);

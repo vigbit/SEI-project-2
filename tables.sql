@@ -16,10 +16,10 @@ CREATE TABLE IF NOT EXISTS profiles (
 
 CREATE TABLE IF NOT EXISTS appointments (
     id SERIAL PRIMARY KEY,
-    doctor_id INTEGER,
-    profile_id INTEGER,
-    date
-    time
+    doctor TEXT,
+    clinic TEXT,
+    date INTEGER,
+    time INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS doctors (

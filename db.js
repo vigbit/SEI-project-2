@@ -70,6 +70,9 @@ const allProfileModelsFunction = require('./models/profile');
 
 const profileModelsObject = allProfileModelsFunction(pool);
 
+const allAppointmentModelsFunction = require('./models/appointment')
+
+const appointmentModelsObject = allAppointmentModelsFunction(pool);
 
 
 /*
@@ -100,5 +103,6 @@ module.exports = {
 
   // users: userModelsObject,
   home: homeModelsObject,
-  profile: profileModelsObject
+  profile: profileModelsObject,
+  appointment: appointmentModelsObject
 };

@@ -2,10 +2,10 @@ module.exports = (db) => {
 
 
 
-  let newprofileControllerCallback = (request, response) => {
-    response.render('profile');
+  // let newprofileControllerCallback = (request, response) => {
+  //   response.render('profileHome');
 
-  }
+  // }
 
     let createprofileControllerCallback = (request, response) =>  {
 
@@ -41,6 +41,10 @@ module.exports = (db) => {
 
         }
         db.profile.profileHome(callback);
+    }
+
+    let manageProfileControllerCallback = (request,response) => {
+        response.render('profileHome');
 
     }
 
@@ -48,9 +52,10 @@ module.exports = (db) => {
 //Export controller functions as a module
   return {
 
-    newprofile: newprofileControllerCallback,
+    // newprofile: newprofileControllerCallback,
     createProfile: createprofileControllerCallback,
-    profileHome: profileHomeControllerCallback
+    profileHome: profileHomeControllerCallback,
+    manageProfile: manageProfileControllerCallback
   };
 
 }

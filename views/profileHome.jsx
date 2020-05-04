@@ -1,24 +1,29 @@
 var React = require("react");
+const Layout = require('./layout/layout')
 
 class ProfileHome extends React.Component {
   render() {
+        const allAppointment = this.props.allAppointments.map( (appointment) => {
+
+        return <div><p>Your next appointment with {(appointment.doctor)} is on {(appointment.date)} at {(appointment.time)} </p></div>
+    })
+
 
 
     return (
-      <html>
-        <head />
-        <body>
-            <h1>Hello user!</h1>
-                <p>
-                    <a href="#">Update prescription</a>
-                </p>
-                <p>
-                    <a href="##">Update doctor information</a>
-                </p>
+      <Layout>
+      <div className="container">
+            <h3>Upcoming doctor appointments:</h3>
+
+                {allAppointment}
 
 
-        </body>
-      </html>
+            <h4>Settings</h4>
+                <p>
+                    <a href="/profile/1/appointment">New appointment</a>
+                </p>
+      </div>
+      </Layout>
     );
   }
 }

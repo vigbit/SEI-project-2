@@ -8,12 +8,19 @@ module.exports = (app, allModels) => {
 
 const profileControllerCallbacks = require('./controllers/profile')(allModels);
 
-  app.get('/newprofile', profileControllerCallbacks.newprofile);
+  //app.get('/newprofile', profileControllerCallbacks.newprofile);
 
   app.post('/newprofile', profileControllerCallbacks.createProfile);
 
-  app.get('/profile/home', profileControllerCallbacks.profileHome)
+  app.get('/profile/home', profileControllerCallbacks.profileHome);
 
+  app.get('/profile/home/1', profileControllerCallbacks.manageProfile);
+
+const appointmentControllerCallbacks = require('./controllers/appointment')(allModels);
+
+  app.get('/profile/1/appointment', appointmentControllerCallbacks.doctorList);
+
+  app.post('/profile/1/appointment', appointmentControllerCallbacks.appointment);
 
 
 
