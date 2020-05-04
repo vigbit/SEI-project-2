@@ -11,6 +11,7 @@ module.exports = (db) => {
 
         let name = request.body.name;
         let age = request.body.age;
+        let image = request.body.image;
 
         const callback = (error, queryResponse) => {
             if(error) {
@@ -19,11 +20,11 @@ module.exports = (db) => {
                 response.status(400);
                 response.send("Something went wrong!");
             }else{
-                response.render('profileHome')
+                response.render('profile',{allProfiles: queryResponse} )
             }
 
         }
-        db.profile.addProfile(name,age,callback);
+        db.profile.addProfile(name,age,image,callback);
     }
 
     let profileHomeControllerCallback = (request,response) => {

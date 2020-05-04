@@ -5,11 +5,11 @@
  */
 module.exports = (dbPoolInstance) => {
 
-    let addProfile = (userName, userAge, callback) => {
+    let addProfile = (userName, userAge, userImage, callback) => {
 
-        let queryText = "INSERT INTO profiles (name, age) VALUES ($1,$2)";
+        let queryText = "INSERT INTO profiles (name, age, image) VALUES ($1,$2, $3) RETURNING *";
 
-        const values = [userName, userAge];
+        const values = [userName, userAge, userImage];
 
         dbPoolInstance.query(queryText, values, (error, queryResult) => {
             if (error){
