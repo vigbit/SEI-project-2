@@ -19,24 +19,40 @@ module.exports = (dbPoolInstance) => {
             if(queryResult.rows.length > 0){
             callback(null, queryResult.rows)
             }else{
-              callback(null, null);
+            callback(null, null);
             }
           }
          })
         }
 
     let profileHome = (callback) => {
-        let queryText = "SELECT * FROM profiles where id=1"
 
-        dbPoolInstance.query(queryText )
-    }
+        let queryText = "SELECT * FROM profiles";
+
+        dbPoolInstance.query(queryText, (error, queryResult) => {
+            console.log("this", queryResult.rows)
+            if (error){
+            console.log("ERRORR");
+            //console.log(error);
+          }else{
+            if(queryResult.rows.length > 0){
+            callback(null, queryResult.rows)
+
+            }else{
+              callback(null, null);
+            }
+          }
+         })
+        }
+
 
 
     return {
 
-        addProfile
+        addProfile,
+        profileHome
 
-    }
+    };
 
 
 

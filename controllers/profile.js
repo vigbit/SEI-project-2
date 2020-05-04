@@ -27,11 +27,22 @@ module.exports = (db) => {
     }
 
     let profileHomeControllerCallback = (request,response) => {
-        response.render('profileHome');
+
+        const callback = (error, queryResponse) => {
+            if(error) {
+                console.log(error);
+                console.log("error");
+                response.status(400);
+                response.send("Something went wrong!");
+            }else{
+                //console.log(queryResponse)
+                response.render('profile', {allProfiles: queryResponse})
+            }
+
+        }
+        db.profile.profileHome(callback);
+
     }
-
-
-
 
 
 //Export controller functions as a module

@@ -7,7 +7,11 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS profiles (
     id SERIAL PRIMARY KEY,
     name TEXT,
-    age INTEGER
+    age INTEGER,
+    sex TEXT,
+    bloodType TEXT,
+    image TEXT
+
 );
 
 CREATE TABLE IF NOT EXISTS appointments (
@@ -28,7 +32,7 @@ CREATE TABLE IF NOT EXISTS doctors (
 
 CREATE TABLE IF NOT EXISTS prescriptions (
     id SERIAL PRIMARY KEY,
-    profile_id INTEGER,
+    profile_id INTEGER REFERENCES profiles(id) ON DELETE CASCADE,
     doctor_id INTEGER,
     drug_id INTEGER
 );
@@ -36,6 +40,7 @@ CREATE TABLE IF NOT EXISTS prescriptions (
 CREATE TABLE IF NOT EXISTS drugs (
     id SERIAL PRIMARY KEY,
     prescription_id INTEGER,
+    name TEXT,
     image TEXT,
     expiry INTEGER
 );

@@ -1,0 +1,1 @@
+INSERT INTO profiles (name, age, sex, bloodType, image) VALUES('Kate', 32, 'F', 'A', 'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png' )
