@@ -1,4 +1,4 @@
-# MVC template files
 
-Start your MVC app here by copying this bolierplate code.
 # SEI-project-2
+
+This is appointment reminder application, where the users can store their upcoming appointments. 
