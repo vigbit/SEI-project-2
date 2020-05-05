@@ -12,11 +12,12 @@ class Profile extends React.Component {
     })
 
 
+
     return (
         <Layout>
             <div className="container">
                 <h4>Select profile</h4>
-                <form action="/newprofile" method="POST">
+                <form action="/profile/home" method="POST">
                     <div>
                         {allProfile}
                     </div>

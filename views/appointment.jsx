@@ -5,7 +5,7 @@ class Appointment extends React.Component {
   render() {
         const allDoctor = this.props.alldoctors.map( (doctor) => {
 
-        return <p><option value="doctor">{(doctor.name)}</option></p>
+        return <p><option>{(doctor.name)}</option></p>
     })
 
 

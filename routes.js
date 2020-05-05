@@ -10,7 +10,7 @@ const profileControllerCallbacks = require('./controllers/profile')(allModels);
 
   //app.get('/newprofile', profileControllerCallbacks.newprofile);
 
-  app.post('/newprofile', profileControllerCallbacks.createProfile);
+  app.post('/profile/home', profileControllerCallbacks.createProfile);
 
   app.get('/profile/home', profileControllerCallbacks.profileHome);
 
